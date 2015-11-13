@@ -1,0 +1,36 @@
+﻿生成启动时间为 2015/11/1 19:10:51。
+     1>项目“E:\study\gitproj\FMango\external\glsdk_0_5_2\glmesh\glmesh.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Iinclude /Isource /I..\glload\include /I..\glutil\include /I..\glm /I..\boost /ZI /nologo /W3 /WX- /Od /Oy- /D _CRT_SECURE_NO_WARNINGS /D _SCL_SECURE_NO_WARNINGS /D BOOST_ALL_NO_LIB /D WIN32 /D DEBUG /D _DEBUG /D MEMORY_DEBUGGING /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"lib\glmeshD.pdb" /Gd /TP /analyze- /errorReport:prompt source\CpuDataWriter.cpp source\Draw.cpp source\GenHelper.cpp source\GenMeshMisc.cpp source\GenPlatonic.cpp source\GenQuadrics.cpp source\Mesh.cpp source\StreamBuffer.cpp source\VertexFormat.cpp source\VertexWriter.cpp
+         VertexWriter.cpp
+         VertexFormat.cpp
+         Unknown compiler version - please run the configure tests and report the results
+         StreamBuffer.cpp
+         Mesh.cpp
+         GenQuadrics.cpp
+         Unknown compiler version - please run the configure tests and report the results
+         GenPlatonic.cpp
+         Unknown compiler version - please run the configure tests and report the results
+         GenMeshMisc.cpp
+         Unknown compiler version - please run the configure tests and report the results
+         GenHelper.cpp
+         Draw.cpp
+         CpuDataWriter.cpp
+         正在生成代码...
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:"lib\glmeshD.lib" /NOLOGO Debug\CpuDataWriter.obj
+         Debug\Draw.obj
+         Debug\GenHelper.obj
+         Debug\GenMeshMisc.obj
+         Debug\GenPlatonic.obj
+         Debug\GenQuadrics.obj
+         Debug\Mesh.obj
+         Debug\StreamBuffer.obj
+         Debug\VertexFormat.obj
+         Debug\VertexWriter.obj
+         glmesh.vcxproj -> E:\study\gitproj\FMango\external\glsdk_0_5_2\glmesh\lib\glmeshD.lib
+     1>已完成生成项目“E:\study\gitproj\FMango\external\glsdk_0_5_2\glmesh\glmesh.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:44.55
