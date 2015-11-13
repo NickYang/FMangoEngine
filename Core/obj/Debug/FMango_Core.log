@@ -1,0 +1,49 @@
+﻿生成启动时间为 2015/11/12 13:16:59。
+     1>项目“E:\study\gitproj\FMango\Core\FMango_Core.vcxproj”在节点 2 上(Rebuild 个目标)。
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppClean.targets(76,5): warning : 文件“e:\study\gitproj\fmango\core\cored.exe”正由另一进程使用，因此该进程无法访问此文件。
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\external\glsdk_0_5_2\freeglut\include /I..\external\glsdk_0_5_2\glm /I..\external\glsdk_0_5_2\glfw\include /I..\external\glsdk_0_5_2\glload\include /ZI /nologo /W3 /WX- /Od /Oy- /D _CRT_SECURE_NO_WARNINGS /D _SCL_SECURE_NO_WARNINGS /D FREEGLUT_STATIC /D _LIB /D FREEGLUT_LIB_PRAGMAS=0 /D WIN32 /D _DEBUG /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"obj\Debug\\" /Fd".\CoreD.pdb" /Gd /TP /analyze- /errorReport:prompt Bundle.cpp Camera.cpp Context.cpp Drawable.cpp FileSystem.cpp FrameBuffer.cpp IndexBuffer.cpp main.cpp Mesh.cpp Model.cpp Node.cpp OGLRenderer.cpp Ref.cpp Renderer.cpp SampleScene.cpp Scene.cpp ShaderProgram.cpp VertexBuffer.cpp
+         VertexBuffer.cpp
+         ShaderProgram.cpp
+         Scene.cpp
+         SampleScene.cpp
+         Renderer.cpp
+         Ref.cpp
+         OGLRenderer.cpp
+         Node.cpp
+         Model.cpp
+         Mesh.cpp
+         main.cpp
+         IndexBuffer.cpp
+         FrameBuffer.cpp
+         FileSystem.cpp
+         Drawable.cpp
+         Context.cpp
+         Camera.cpp
+         Bundle.cpp
+         正在生成代码...
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:".\CoreD.lib" /NOLOGO obj\Debug\Bundle.obj
+         obj\Debug\Camera.obj
+         obj\Debug\Context.obj
+         obj\Debug\Drawable.obj
+         obj\Debug\FileSystem.obj
+         obj\Debug\FrameBuffer.obj
+         obj\Debug\IndexBuffer.obj
+         obj\Debug\main.obj
+         obj\Debug\Mesh.obj
+         obj\Debug\Model.obj
+         obj\Debug\Node.obj
+         obj\Debug\OGLRenderer.obj
+         obj\Debug\Ref.obj
+         obj\Debug\Renderer.obj
+         obj\Debug\SampleScene.obj
+         obj\Debug\Scene.obj
+         obj\Debug\ShaderProgram.obj
+         obj\Debug\VertexBuffer.obj
+         FMango_Core.vcxproj -> E:\study\gitproj\FMango\Core\.\CoreD.lib
+     1>已完成生成项目“E:\study\gitproj\FMango\Core\FMango_Core.vcxproj”(Rebuild 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:07.38
