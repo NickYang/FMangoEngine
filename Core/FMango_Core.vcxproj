@@ -40,13 +40,13 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>.\</OutDir>
+    <OutDir>..\Bin\Debug\</OutDir>
     <IntDir>obj\Debug\</IntDir>
     <TargetName>CoreD</TargetName>
     <TargetExt>.lib</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>.\</OutDir>
+    <OutDir>..\Bin\Release\</OutDir>
     <IntDir>obj\Release\</IntDir>
     <TargetName>Core</TargetName>
     <TargetExt>.lib</TargetExt>
@@ -100,7 +100,6 @@
     <ClInclude Include="OGLRenderer.h" />
     <ClInclude Include="Ref.h" />
     <ClInclude Include="Renderer.h" />
-    <ClInclude Include="SampleScene.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="ShaderProgram.h" />
     <ClInclude Include="Stream.h" />
@@ -120,11 +119,9 @@
     <ClCompile Include="OGLRenderer.cpp" />
     <ClCompile Include="Ref.cpp" />
     <ClCompile Include="Renderer.cpp" />
-    <ClCompile Include="SampleScene.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="ShaderProgram.cpp" />
     <ClCompile Include="VertexBuffer.cpp" />
-    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

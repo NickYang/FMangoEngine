@@ -22,13 +22,13 @@ project("FMango_Core")
 		links{"glu32", "opengl32", "winmm", "user32"}
 	
 	configuration "Debug"
-		targetdir "Core"
+		targetdir "Bin/Debug"
 		targetsuffix "D"
 		defines "_DEBUG"
 		flags "Symbols"
 		
 	configuration "Release"
-		targetdir "Core"
+		targetdir "Bin/Release"
 		defines "NDEBUG"
 		flags {"OptimizeSpeed", "NoFramePointer", "ExtraWarnings", "NoEditAndContinue"};
 	
@@ -41,7 +41,6 @@ project("FMango_Samples")
 	files("Samples/*.h")
 	targetname "Samples"
 	includedirs {"Core","external/glsdk_0_5_2"}
-	libdirs "Core"
 	
 	UseLibs {"glload", "glfw", "glm", "freeglut"}
 	configuration "windows"
@@ -49,13 +48,15 @@ project("FMango_Samples")
 	    links {"glu32", "opengl32", "winmm", "user32" }
 		
 	configuration "Debug"
-		targetdir "Samples"
+		targetdir "Bin/Debug"
 		targetsuffix "D"
 		defines "_DEBUG"
 		flags "Symbols"
+		libdirs "Bin/Debug"
 		links "CoreD"
 	configuration "Release"
-		targetdir "Samples"
+		targetdir "Bin/Release"
 		defines "NDEBUG"
 		flags {"OptimizeSpeed", "NoFramePointer", "ExtraWarnings", "NoEditAndContinue"};
+		libdirs "Bin/Release"
 		links "Core"

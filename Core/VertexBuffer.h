@@ -1,6 +1,6 @@
 #pragma once
+#include "Base.h"
 #include "Ref.h"
-#include <vector>
 
 namespace FMango{
 	class VertexFormat
@@ -12,8 +12,8 @@ namespace FMango{
 			COLOR = 1,
 			NORMAL = 2,
 			TANGENT = 3,
+			TEXCOORD0 = 4,
 		};
-
 		struct Element
 		{
 			Usage usage;
@@ -23,7 +23,7 @@ namespace FMango{
 		void pushElement(Element element);
 		void getElements(const std::vector<Element>& elements);
 		const Element& getElement(unsigned int i) const;
-		unsigned int getSize();
+		unsigned int getTotalSize();
 		unsigned int getElementCount();
 
 	private:
@@ -35,7 +35,10 @@ namespace FMango{
 	public:
 		VertexBuffer();
 		VertexBuffer(VertexFormat *format, float *data, unsigned int vertexCount);
-
+		VertexBuffer(const vector<vec3> &vecPos, 
+			const vector<vec3> &vecNormal, 
+			const vector <vec2> &vecUV, 
+			const vector<vec4> &vecTengent);
 		~VertexBuffer();
 
 		void setVertexFormat(VertexFormat *format);

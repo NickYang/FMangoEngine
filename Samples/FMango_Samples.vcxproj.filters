@@ -1,9 +1,49 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClInclude Include="SampleScene.h" />
+    <ClInclude Include="SampleMultipleLight.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SampleScene.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="SampleMultipleLight.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="shader">
+      <UniqueIdentifier>{1ca9adb7-1a6f-4387-ac19-a408b193ff6a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shader\basic.frag">
+      <Filter>shader</Filter>
+    </None>
+    <None Include="shader\basic.vert">
+      <Filter>shader</Filter>
+    </None>
+    <None Include="shader\basic_layout.frag">
+      <Filter>shader</Filter>
+    </None>
+    <None Include="shader\basic_layout.vert">
+      <Filter>shader</Filter>
+    </None>
+    <None Include="shader\basic_uniform.frag">
+      <Filter>shader</Filter>
+    </None>
+    <None Include="shader\basic_uniform.vert">
+      <Filter>shader</Filter>
+    </None>
+    <None Include="shader\basic_uniformblock.frag">
+      <Filter>shader</Filter>
+    </None>
+    <None Include="shader\basic_uniformblock.vert">
+      <Filter>shader</Filter>
+    </None>
+    <None Include="shader\multilight.frag">
+      <Filter>shader</Filter>
+    </None>
+    <None Include="shader\multilight.vert">
+      <Filter>shader</Filter>
+    </None>
   </ItemGroup>
 </Project>

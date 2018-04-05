@@ -189,12 +189,40 @@ namespace FMango{
 				return false;
 			}
 		}
+		GLint activeAttributes;
+		glGetProgramiv(programHandle, GL_ACTIVE_ATTRIBUTES, &activeAttributes);
+		if (activeAttributes > 0)
+		{
+			GLint length;
+			glGetProgramiv(programHandle, GL_ACTIVE_ATTRIBUTE_MAX_LENGTH, &length);
+			if (length > 0)
+			{
+				GLchar *attribName = new GLchar[length + 1];
+				GLint attribSize;
+				GLenum attribType;
+				GLint attribLocation;
+				for (int i = 0; i < length; i++)
+				{
+					glGetActiveAttrib(programHandle, i, length, NULL, &attribSize, &attribType, attribName);
+					attribName[length] = '\0';
+					attribLocation = glGetAttribLocation(programHandle, attribName);
+					m_mapAttribLocation[attribName] = attribLocation;
+				}
+			}
+		}
+
+
 		return true;
 	}
 
 	void ShaderProgram::use()
 	{
 		glUseProgram(programHandle);
+	}
+
+	int ShaderProgram::getAttribLocation(const string &name) const
+	{
+		return m_mapAttribLocation.at(name);
 	}
 
 }

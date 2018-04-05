@@ -35,10 +35,11 @@
 
 //GL
 
-#include "glload/gl_4_0.h"
+#include "glload/gl_3_3.h"
 #include "glload/gl_load.hpp"
+#include "glm/glm.hpp"
 #include "GL/freeglut.h"
-
+using namespace glm;
 // Bring common functions from C into global namespace
 using std::memcpy;
 using std::fabs;
@@ -106,3 +107,12 @@ namespace FMango
 
 }
 
+//GLSL
+#define VERTEX_ATTRIBUTE_POSITION_NAME              "VertexPosition"
+#define VERTEX_ATTRIBUTE_NORMAL_NAME                "VertexNormal"
+#define VERTEX_ATTRIBUTE_COLOR_NAME                 "VertexColor"
+#define VERTEX_ATTRIBUTE_TANGENT_NAME               "VertexTangent"
+#define VERTEX_ATTRIBUTE_BINORMAL_NAME              "VertexBinormal"
+#define VERTEX_ATTRIBUTE_BLENDWEIGHTS_NAME          "VertexBlendWeights"
+#define VERTEX_ATTRIBUTE_BLENDINDICES_NAME          "VertexBlendIndices"
+#define VERTEX_ATTRIBUTE_TEXCOORD_PREFIX_NAME       "VertexTexCoord"

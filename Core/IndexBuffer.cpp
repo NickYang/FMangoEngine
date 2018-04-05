@@ -12,9 +12,25 @@ namespace FMango{
 
 	}
 
+	IndexBuffer::IndexBuffer(const vector<int> &vecFaces)
+	{
+		m_uSize = vecFaces.size();
+		m_pData = new unsigned int[m_uSize];
+		vector<int>::const_iterator it;
+		unsigned int i = 0;
+		for (it = vecFaces.cbegin(); it != vecFaces.cend(); it++)
+		{
+			m_pData[i++] = (unsigned int)*it;
+		}
+	}
 
 	IndexBuffer::~IndexBuffer()
 	{
+		if (m_pData)
+		{
+			delete m_pData;
+			m_pData = NULL;
+		}
 	}
 
 	void IndexBuffer::setData(int *data)

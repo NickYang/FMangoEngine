@@ -21,7 +21,6 @@ namespace FMango
 	{
 		Node* node = new Node();
 		Model* model = new Model();
-		model->setShader("shader/basic.vert", "shader/basic.frag");
 		float data[] = {
 			-0.8f, -0.8f, 0.0f,
 			1.0f, 0.0f, 0.0f,
@@ -43,8 +42,9 @@ namespace FMango
 
 		VertexBuffer *pVetexBuffer = new VertexBuffer(pVertexFormat, data, sizeof(data)/sizeof(float)/(ePos.size+ eColor.size));
 		IndexBuffer *pIndexBuffer = new IndexBuffer(indices, 3);
-		Mesh * mesh = Mesh::create(pVetexBuffer, pIndexBuffer);
+		Mesh * mesh = Mesh::create(pVetexBuffer, pIndexBuffer, "shader/basic.vert", "shader/basic.frag");
 
+		//mesh->setShader("shader/basic.vert", "shader/basic.frag");
 		model->setMesh(mesh);
 		node->setModel(model);
 		

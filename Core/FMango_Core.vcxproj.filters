@@ -28,7 +28,6 @@
     <ClCompile Include="FileSystem.cpp" />
     <ClCompile Include="FrameBuffer.cpp" />
     <ClCompile Include="IndexBuffer.cpp" />
-    <ClCompile Include="main.cpp" />
     <ClCompile Include="Mesh.cpp" />
     <ClCompile Include="Model.cpp" />
     <ClCompile Include="Node.cpp" />

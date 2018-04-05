@@ -41,14 +41,14 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>.\</OutDir>
+    <OutDir>..\Bin\Debug\</OutDir>
     <IntDir>obj\Debug\</IntDir>
     <TargetName>SamplesD</TargetName>
     <TargetExt>.exe</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>.\</OutDir>
+    <OutDir>..\Bin\Release\</OutDir>
     <IntDir>obj\Release\</IntDir>
     <TargetName>Samples</TargetName>
     <TargetExt>.exe</TargetExt>
@@ -66,7 +66,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>freeglutD.lib;glfwD.lib;glloadD.lib;glu32.lib;opengl32.lib;winmm.lib;user32.lib;CoreD.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>..\Core;..\external\glsdk_0_5_2\freeglut\lib;..\external\glsdk_0_5_2\glfw\library;..\external\glsdk_0_5_2\glload\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\external\glsdk_0_5_2\freeglut\lib;..\external\glsdk_0_5_2\glfw\library;..\external\glsdk_0_5_2\glload\lib;..\Bin\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
     </Link>
   </ItemDefinitionGroup>
@@ -89,15 +89,30 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalDependencies>freeglut.lib;glfw.lib;glload.lib;glu32.lib;opengl32.lib;winmm.lib;user32.lib;Core.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>..\Core;..\external\glsdk_0_5_2\freeglut\lib;..\external\glsdk_0_5_2\glfw\library;..\external\glsdk_0_5_2\glload\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\external\glsdk_0_5_2\freeglut\lib;..\external\glsdk_0_5_2\glfw\library;..\external\glsdk_0_5_2\glload\lib;..\Bin\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="SampleMultipleLight.h" />
     <ClInclude Include="SampleScene.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="SampleMultipleLight.cpp" />
     <ClCompile Include="SampleScene.cpp" />
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shader\basic.frag" />
+    <None Include="shader\basic.vert" />
+    <None Include="shader\basic_layout.frag" />
+    <None Include="shader\basic_layout.vert" />
+    <None Include="shader\basic_uniform.frag" />
+    <None Include="shader\basic_uniform.vert" />
+    <None Include="shader\basic_uniformblock.frag" />
+    <None Include="shader\basic_uniformblock.vert" />
+    <None Include="shader\multilight.frag" />
+    <None Include="shader\multilight.vert" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

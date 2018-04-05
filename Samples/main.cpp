@@ -1,5 +1,5 @@
-#include "Base.h"
 #include "SampleScene.h"
+#include "SampleMultipleLight.h"
 
 FMango::Scene *scene;
 void initializeGL() {
@@ -50,4 +50,6 @@ void main(int argc, char **argv)
 	glutReshapeFunc(resizeGL);
 	glutIdleFunc(updateGL);
 	glutMainLoop();
+	//FMangoApp app;
+	//app::run();
 }

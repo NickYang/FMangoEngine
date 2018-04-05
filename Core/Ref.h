@@ -1,6 +1,6 @@
 #ifndef REF_H_
 #define REF_H_
-
+#include "Base.h"
 namespace FMango
 {
 class Ref

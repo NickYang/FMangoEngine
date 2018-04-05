@@ -1,4 +1,5 @@
 #pragma once
+#include "Base.h"
 #include "Ref.h"
 namespace FMango{
 	class IndexBuffer :
@@ -7,7 +8,7 @@ namespace FMango{
 	public:
 		IndexBuffer();
 		IndexBuffer(unsigned int *data, unsigned int size);
-
+		IndexBuffer(const vector<int> &vecFaces);
 		~IndexBuffer();
 
 		void setData(int *data);

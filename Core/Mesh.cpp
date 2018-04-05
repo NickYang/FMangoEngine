@@ -31,7 +31,7 @@ namespace FMango{
 		glBindVertexArray(0);*/
 	}
 
-	Mesh::Mesh(VertexBuffer* vertexBuffer, IndexBuffer *IndexBuffer)
+	Mesh::Mesh(VertexBuffer* vertexBuffer, IndexBuffer *IndexBuffer, const char *vertShader, const char *fragShader)
 		:m_pVertexBuffer(vertexBuffer), m_indexBuffer(IndexBuffer)
 	{
 		float *pVertexData = m_pVertexBuffer->getVertexData();
@@ -43,13 +43,38 @@ namespace FMango{
 		GLuint vbos[2];
 		glGenBuffers(2, vbos);
 		glBindBuffer(GL_ARRAY_BUFFER, vbos[0]);
-		glBufferData(GL_ARRAY_BUFFER, pVertexFormat->getSize()*uCount, pVertexData, GL_DYNAMIC_DRAW);
+		glBufferData(GL_ARRAY_BUFFER, pVertexFormat->getTotalSize()*uCount, pVertexData, GL_DYNAMIC_DRAW);
 		size_t offset = 0;
+		setShader(vertShader, fragShader);
 		for (unsigned int i = 0; i < pVertexFormat->getElementCount(); i++)
 		{
 			const VertexFormat::Element& element = pVertexFormat->getElement(i);
 			void* pointer = (void*)offset;
-			glVertexAttribPointer(element.usage, element.size, GL_FLOAT, false, pVertexFormat->getSize(), pointer);
+			GLint index;
+			switch (element.usage)
+			{
+			case VertexFormat::POSITION:
+				index = m_pShaderProgram->getAttribLocation(VERTEX_ATTRIBUTE_POSITION_NAME);
+				break;
+			case VertexFormat::COLOR:
+				index = m_pShaderProgram->getAttribLocation(VERTEX_ATTRIBUTE_COLOR_NAME);
+				break;
+			case VertexFormat::NORMAL:
+				index = m_pShaderProgram->getAttribLocation(VERTEX_ATTRIBUTE_NORMAL_NAME);
+				break;
+			case VertexFormat::TANGENT:
+				index = m_pShaderProgram->getAttribLocation(VERTEX_ATTRIBUTE_TANGENT_NAME);
+				break;
+			//TODO:
+			case VertexFormat::TEXCOORD0:
+				assert(false);
+				index = m_pShaderProgram->getAttribLocation(VERTEX_ATTRIBUTE_TEXCOORD_PREFIX_NAME);
+				break;
+			default:
+				index = -1;
+				break;
+			}
+			glVertexAttribPointer(index, element.size, GL_FLOAT, false, pVertexFormat->getTotalSize(), pointer);
 			glEnableVertexAttribArray(element.usage);
 			offset += element.size*sizeof(float);
 		}
@@ -65,27 +90,22 @@ namespace FMango{
 	{
 	}
 
-	Mesh* Mesh::Create(const vector<VertexData> &vertexList, const vector<int> &indexList)
+	void Mesh::setShader(const char *vertShader, const char *fragShader)
 	{
-		return new Mesh();
+		m_pShaderProgram = ShaderProgram::create(vertShader, fragShader);
 	}
-
-	Mesh* Mesh::Create(int numVertices, float *points, int numTriangles, int* indices)
-	{
-		return new Mesh(numVertices, points, numTriangles, indices);
-	}
-
 
 
 	void Mesh::draw()
 	{
+		m_pShaderProgram->use();
 		glBindVertexArray(m_uVao);
 		glDrawArrays(GL_TRIANGLES, 0, m_pVertexBuffer->getVertexCount());
 	}
 
-	Mesh* Mesh::create(VertexBuffer* vertexBuffer, IndexBuffer *indexBuffer)
+	Mesh* Mesh::create(VertexBuffer* vertexBuffer, IndexBuffer *indexBuffer, const char *vertShader, const char *fragShader)
 	{
-		Mesh* mesh = new Mesh(vertexBuffer, indexBuffer);
+		Mesh* mesh = new Mesh(vertexBuffer, indexBuffer, vertShader, fragShader);
 		return mesh;
 	}
 

@@ -10,6 +10,7 @@ namespace FMango{
 	public:
 		static ShaderProgram* create(const char *vertfile, const char *fragfile, const char* define = "");
 		void use();
+		int getAttribLocation(const string &name) const;
 	protected:
 		ShaderProgram();
 		//ShaderProgram(const char *vertfile, const char *fragfile, const char* define);
@@ -21,6 +22,7 @@ namespace FMango{
 
 	private:
 		GLuint programHandle;
+		map<string, int>m_mapAttribLocation;
 	};
 
 
